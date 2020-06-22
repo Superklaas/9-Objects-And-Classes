@@ -1,27 +1,23 @@
 package be.vdab.Ex96Stopwatch;
 
-import java.util.Date;
-
 public class Stopwatch {
-
-        Date date = new Date();
 
         private long startTime;
         private long endTime;
 
         public Stopwatch() {
-            startTime = date.getTime();
+            startTime = System.currentTimeMillis();
         }
 
         public void start() {
-            startTime = date.getTime();
+            startTime = System.currentTimeMillis();
         }
 
         public void stop() {
-            endTime = date.getTime();
+            endTime = System.currentTimeMillis();
         }
 
-        public long getElapsedTime() {
+        public double getElapsedTime() {
             return endTime - startTime;
         }
 

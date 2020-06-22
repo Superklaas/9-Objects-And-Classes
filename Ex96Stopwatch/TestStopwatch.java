@@ -1,5 +1,7 @@
 package be.vdab.Ex96Stopwatch;
 
+import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 
@@ -11,8 +13,8 @@ public class TestStopwatch {
         // Create array of random 100,000 numbers to be sorted
         int[] array = new int[100000];
         Random random = new Random();
-        for (int i : array) {
-            array[i] = random.nextInt();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100);
         }
 
         // Create stopwatch and measure execution time selection sort
@@ -20,8 +22,11 @@ public class TestStopwatch {
         stopwatch.start();
         selectionSort(array);
         stopwatch.stop();
-        long elapsedTime = stopwatch.getElapsedTime();
-        System.out.println("The execution time of sorting 100,000 numbers using selection sort is " + elapsedTime);
+        double elapsedTime = stopwatch.getElapsedTime();
+
+        // Print results
+        DecimalFormat df = new DecimalFormat("#.##");
+        System.out.print("The execution time of sorting 100,000 numbers using selection sort is " + df.format(elapsedTime/1000) + "s");
     }
 
     public static void selectionSort(int[] arr){

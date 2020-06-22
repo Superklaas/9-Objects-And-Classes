@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 
-// Ik krijg als resultaat 0s en vraag me af waar de fout zit.
-
 public class TestStopwatch {
     public static void main(String[] args) {
 
